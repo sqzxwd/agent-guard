@@ -1,0 +1,25 @@
+[project]
+name = "agent-guard"
+version = "0.1.0"
+description = "Local lightweight proxy-firewall for AI agents protecting against secret leaks and infinite loops"
+readme = "README.md"
+requires-python = ">=3.14"
+authors = [
+    { name = "AgentGuard Team" }
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "httpx",
+    "rich",
+    "typer",
+    "pytest",
+]
+
+[project.scripts]
+agent-guard = "src.cli:app"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-v"
